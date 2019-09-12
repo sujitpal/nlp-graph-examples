@@ -2,7 +2,7 @@
 
 ### Introduction
 
-This sub-project is inspired by the paper [A Complex Network approach to Text Summarization](https://www.sciencedirect.com/science/article/pii/S0020025508004520) by (Lucas Antiqueira, Olvaldo N. Oliveira Jr, Luciano da Fontoura Costa, and Maria das Gracas Volpe Nunes, 2009). The paper describes an ensemble of 14 graph techniques that are used to predict an extractive summary for the document.
+This sub-project is inspired by the paper [A Complex Network approach to Text Summarization](https://www.sciencedirect.com/science/article/pii/S0020025508004520) (Lucas Antiqueira, Olvaldo N. Oliveira Jr, Luciano da Fontoura Costa, and Maria das Gracas Volpe Nunes, 2009). The paper describes an ensemble of 14 graph techniques that are used to predict an extractive summary for the document.
 
 The document is modeled as a graph, with nodes corresponding to sentences, and edges corresponding to the co-occurrence of commonly occurring nouns across the sentence.
 
