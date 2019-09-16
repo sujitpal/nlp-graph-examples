@@ -1,0 +1,1 @@
+gen(d_i | d_j) = \frac{\sum_{s=1}^t p_s(d_i|d_j)}{t}
