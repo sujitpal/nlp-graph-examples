@@ -20,9 +20,9 @@ The documents to summarize come from the [DeepMind Q+A Dataset](https://cs.nyu.e
 
 <table cellspacing=2 cellpadding=2 border=1>
   <tr>
-    <th>Story ID</th>
-    <th>Highlights</th>
-    <th>Generated Summary</th>
+    <th width="10%">Story ID</th>
+    <th width="30%">Highlights</th>
+    <th width="60%">Generated Summary</th>
   </tr>
   <tr valign="top">
     <td>be8fc9fffd65a5a38153e83acc304a83c2e206e1.story</td>
@@ -30,7 +30,7 @@ The documents to summarize come from the [DeepMind Q+A Dataset](https://cs.nyu.e
     <td>Well before the Iranian leader's arrival in Caracas, his plans for a Latin America tour grabbed global attention as tensions grow between many Western powers and Iran over the nation's nuclear program. Spanish-language headlines on the network's website last week described Israeli spies, foreign intervention in Syria, a report that Japan plans to "disobey" U.S. sanctions against Iran and an allegation that airport security screening machines in the United States cause death. Officials in the United States and other Western nations have ratcheted up sanctions against Iran several times since a November report by the U.N. nuclear watchdog agency said the Iranian government was developing the technology needed to build a nuclear weapon. Some U.S. government officials and Washington analysts allege that Iran could be using new business relationships and energy deals with Latin American countries as a cover for more illicit projects, such as training Hezbollah militants and developing nuclear weapons. Iran and its Bolivarian allies (Venezuela, Bolivia, Nicaragua and Ecuador) in Latin America are systematically engaged in a pattern of financial behavior, recruitment exercises and business activities that are not economically rational and could be used for the movement and/or production of (weapons of mass destruction) and the furthering of Iran's stated aim of avoiding international sanctions on its nuclear program," Farah wrote in a May 2011 report for the U.S. Defense Department.</td>
   </tr>
   <tr valign="top">
-    <td>1151e28352e5d92937eeefb9ede8ad63137b9a20<td>
+    <td>1151e28352e5d92937eeefb9ede8ad63137b9a20</td>
     <td>Scot Case answers your questions on greenwashing. Has green become a new form of "premium brand"? What green words and phrases should raise a red flag?. Click here to read more answers to your questions.</td>
     <td>There are cleaning products and paints, for example, that have been certified as meeting tough environmental standards by EcoLogo or Green Seal that deliver the same high-quality performance one expects without costing any extra. Some particularly savvy green consumers, however, want additional information beyond knowing that a product has been certified as meeting a standard. They are seeking information presented in a nutrition-label format that allows them to compare two certified products to determine which is greener. Government purchasers in New York, Illinois, California, Minnesota, and other places, for example, require cleaning products to meet the Green Seal or EcoLogo cleaning-product standards. Other programs -- including EcoLogo, Green Seal, and the Chlorine Free Products Association -- independently review product test data and visit the manufacturing facilities to ensure compliance with the standard.</td>
   </tr>
