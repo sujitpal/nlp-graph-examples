@@ -22,7 +22,7 @@ We then set a new attribute `seed_label` for each node. For the ones correspondi
 Of 623 unlabeled sentences, Label Propagation returns the following predictions:
 
 * 319 sentences use `compound` as the first sense. Examples -- ORTEP view of the compound [CuL8(ClO4)2] with the numbering scheme adopted.
-* 7 sentences use `compound` in the second sense. Example -- Sensitive to compound Flourescence
+* 7 sentences use `compound` in the second sense. Example -- Sensitive to compound fluorescence.
 * 298 sentences remain unclassified. Based on a quick check, many of these should really belong to sense 1.
 
 Results are not great, but it is possible that it can be improved with more manual labeling. Another possibility might be to have a denser network, i.e., discard all but top 10 instead of top 5 highly weighted rows, etc. We did not investigate further because of shortage of time.
