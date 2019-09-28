@@ -12,6 +12,17 @@ We cluster the graph corresponding to the adjacency matrix G using [Louvain's Co
 
 Clusterings are compared using the [Silhouette score](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.silhouette_score.html), which measures how well-separated the clusters are.
 
+### Code
+
+* [01-preprocess-data.ipynb](src/01-preprocess-data.ipynb) -- parses out text portion of newsgroup post and writes it out as one single chunk of text, one per line to `texts.tsv` and newsgroup labels (folder name) to `labels.tsv`. Document IDs are based on folder and file names.
+* [02-tfidf-similarity.ipynb](src/02-tfidf-similarity.ipynb) -- Create matrix T of TF-IDF vectors, compute cosine similarity matrix S, sparsify S by retaining only top generators, and remove self-edges, then re-normalize to make it a probability matrix.
+* [03-generation-probs.ipynb](src/03-generation-probs.ipynb) -- generate c=80 random walks of path lengths t=1, 2, 3 starting from each node in the graph represented by the adjacency matrix S. Generate transition probability matrix G1, G2, G3 corresponding to t=1..3, corresponding to a generative model for documents with proximity depdendency t.
+* [04-create-graph.ipynb](src/04-create-graph.ipynb) -- creates CSV file for nodes and edges for translating matrices G1..G3 to corresponding Neo4j graphs using `neo4j-admin` tool.
+* Ingest CSV files to create Neo4j graph.
+* [05a-cluster-louvain.ipynb](src/05a-cluster-louvain.ipynb) -- apply the Louvain clustering algorithm on each graph. This notebook needs to be run separately for G1, G2, and G3. Writes out predicted cluster IDs into output file.
+* [05b-cluster-kmeans.ipynb](src/05b-cluster-kmeans.ipynb) -- apply K-Means clustering against document vectors from the similarity matrix S, G1, G2, and G3, computed using multiple runs. Writes out predicted cluster IDs into output file.
+* [06-evaluate.ipynb](src/06-evaluate.ipynb) -- evaluate Silhouette Score for the different clusterings.
+
 ### Data
 
 Dataset is the [20-newsgroups dataset](http://qwone.com/~jason/20Newsgroups/) consisting of approximately 18k newsgroup postings from 20 different categories.

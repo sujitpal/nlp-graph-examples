@@ -16,6 +16,13 @@ For this project, I am going to use a company-proprietary KG of clinical healthc
     # edge.CSV
     # src_id,rel_name,dst_id,rel_weight
 
+### Code
+
+* [01-annotate-stories.ipynb](src/01-annotate-stories.ipynb) -- use Aho-Corasick algorithm to construct dictionary of terms from proprietary Knowledge Graph (KG), and stream selected articles against it. Output is a file `story-concepts.tsv` of concepts matched against each article.
+* [02-create-graphs.ipynb](src/02-create-graphs.ipynb) -- read CSV files of KG nodes and edges, and rewrite it to format readable by `neo4j-admin` tool. Ingest and build Neo4j graph of KG. Two versions of the graph are extracted, one containing all lateral relations (no parent or child), and the other containing only parent relationships.
+* [03-run-ppr.ipynb](src/03-run-ppr.ipynb) -- for each article, set source nodes for concepts matched for the article, and run Personalized PageRank (PPR) on the lateral relations graph to get highly ranked concepts that are biased by the source nodes. Save the top k (k=5) concepts most highly ranked by PPR to file `story-concepts-ppr.tsv`.
+* [04-find-categories.ipynb](src/04-find-categories.ipynb) -- the proprietary KG contains all disease concepts as children of the concept "Diseases", so we navigate from top concepts found in files `story-concepts.tsv` and `story-concepts-ppr.tsv` to the children of the "Diseases" concepts so we can roll these concepts up to the appropriate disease category. Top disease categories are topics.
+
 ### Data
 
 We choose the following four articles from ScienceDaily magazine. Data was captured by navigating to the page on the browser and copy pasting the text. They are provided in the `data` folder for this project.

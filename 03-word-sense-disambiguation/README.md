@@ -6,6 +6,16 @@ This project was inspired by the paper [Word Sense Disambiguation using Label Pr
 
 Given an ambiguous word, such as these found in this [list of Ambiguous Words](https://muse.dillfrog.com/lists/ambiguous), we collect sentences containing the word from some dataset. We then manually annotate a subset of these sentences to indicate the sense it indicates in the given sentence. We then construct a graph, where each sentence is a node, and the edges between the sentences are computed as the similarity between the feature vectors for the sentences. We then sparsify the graph so that we consider only the top 5 edges between any two sentences. We then apply the Label Propagation algorithm on the graph, and after a sufficient number of iterations, the Label Propagation algorithm should converge and mark the unannotated sentences as belonging to one of the senses of the word. The similarity measures used in the paper were [Cosine Similarity](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise.cosine_similarity.html) and [Jensen-Shannon Divergence](https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.distance.jensenshannon.html?highlight=jensenshannon#scipy.spatial.distance.jensenshannon).
 
+### Code
+
+* [01-collect-data-db.ipynb](src/01-collect-data-db.ipynb) -- Databricks notebook to extract sentences containing the word `compound` from the ScienceDirect CC-By corpus (partial, part-00000 only), produces file `sentences-compound.tsv`.
+* Manually annotate some of the sentences in `sentences-compound.tsv` as belonging to one of the target senses to produce file `sentences-compound-plabel.tsv`. 
+* [02-extract-features.ipynb](src/02-extract-features.ipynb) -- compute TF-IDF vectors from ngrams for n=1..3 for tokens, and 3-grams for POS tags, and compute cosine similarity based similarity matrix S. Similarity matrix is sparsified to retain only top 5 nearest sentences.
+* [03-create-graph.ipynb](src/03-create-graph.ipynb) -- use sentence list to produce node list `nodes-compound.tsv`, and matrix S to produce edge list `edges-compound.tsv`.
+* Ingest node and edge list to create Neo4j graph.
+* [04-propagate-labels.ipynb](04-propagate-labels.ipynb) -- run Label Propagation algorithm on graph, and write out predicted labels on sentences that are not yet labeled already.
+
+
 ### Data and Methods
 
 In our implementation, we extracted 668 sentences containing the ambiguous word `compound` from sentences from the ScienceDirect corpus. We then marked up 40 instances (19, 21) of these sentences as either containing (1) compound as in chemical compound, or (2) compound to indicate a group or multiple. For example:
