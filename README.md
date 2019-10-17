@@ -2,6 +2,8 @@
 
 Examples for Graphorum 2019 presentation -- Graph Techniques for Natural Language Processing
 
+* [Presentation Slides for Graphorum 2019](https://github.com/sujitpal/nlp-graph-examples.git)
+
 ### Abstract
 
 Natural Language embodies the human ability to make “infinite use of finite means” (Humboldt, 1836; Chomsky, 1965). A relatively small number of words can be combined using a grammar in myriad different ways to convey all kinds of information. Languages model inter-relationships between their words, just like graphs model inter-relationships between their vertices. It is not surprising then, that graphs are a natural tool to study Natural Language and glean useful information from it, automatically, and at scale. This presentation will focus on NLP techniques to convert raw text to graphs, and present Graph Theory–based solutions to some common NLP problems. Solutions presented will use Apache Spark or Neo4j, depending on problem size and scale. Examples of Graph Theory solutions presented include PageRank for Document Summarization, Link Prediction from raw text for Knowledge Graph enhancement, Label Propagation for entity classification, and Random Walk techniques to find similar documents.
