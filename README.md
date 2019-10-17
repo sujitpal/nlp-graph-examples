@@ -2,7 +2,7 @@
 
 Examples for Graphorum 2019 presentation -- Graph Techniques for Natural Language Processing
 
-* [Presentation Slides for Graphorum 2019](https://github.com/sujitpal/nlp-graph-examples.git)
+* [Presentation Slides for Graphorum 2019](https://www.slideshare.net/sujitpal/graph-techniques-for-natural-language-processing-183117140)
 
 ### Abstract
 
